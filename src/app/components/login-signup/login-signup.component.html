@@ -1,0 +1,160 @@
+<div class="bg_css">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6  ">
+                <div class="box1">
+                    <div class="panel border bg-white">
+                        <div class="panel border-heading">
+                            <div class="py-2 fs-3 fw-bold text-info text-center ">SignUp</div>
+                        </div>
+                        <div class="panel-body p-3">
+                            <form [formGroup]="signup_form">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group pt-3">
+                                            <div class="input-feild1">
+                                                <span class="fa fa-user p-2"></span>
+                                                <input type="text" formControlName="fn" placeholder="First Name"
+                                                    class="text-info">
+                                            </div>
+                                        </div>
+                                        <small *ngIf="signup_form.controls['fn'].dirty && signup_form.hasError('required','fn')" class="text-danger">First name is required</small>
+                                    <!-- next -->
+                                        <div class="form-group pt-3">
+                                            <div class="input-feild1">
+                                                <span class="fa fa-user p-2"></span>
+                                                <input type="text" formControlName="un" placeholder="User Name"
+                                                    class="text-info">
+                                            </div>
+                                        </div>
+                                        <small *ngIf="signup_form.controls['un'].dirty && signup_form.hasError('required','un')" class="text-danger">User name is required</small>
+                                    <!-- next -->                                          
+                                        <div class="form-group pt-3">
+                                            <div class="input-feild1">
+                                                <span class="fa fa-phone p-2"></span>
+                                                <input type="number" formControlName="tp" placeholder="Contact Number"
+                                                    class="text-info">
+                                            </div>
+                                        </div>
+                                        <small *ngIf="signup_form.controls['tp'].dirty && signup_form.hasError('required','tp')" class="text-danger">Contact number is required</small>
+                                    <!-- next -->
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group pt-3">
+                                            <div class="input-feild1">
+                                                <span class="fa fa-user p-2"></span>
+                                                <input type="text" formControlName="ln" placeholder="Last Name"
+                                                    class="text-info">
+                                            </div>
+                                        </div>
+                                        <small *ngIf="signup_form.controls['ln'].dirty && signup_form.hasError('required','ln')" class="text-danger">Last name is required</small>
+                                    <!-- next -->
+                                        <!-- <div class="form-group pt-3">
+                                            <div class="input-feild">
+                                                <span class="fa fa-venus-mars p-1 "></span>
+                                                <input type="text" formControlName="fn" placeholder=""
+                                                    class="text-info">
+                                            </div>
+                                        </div> -->
+                                        <div class="form-group pt-3">
+                                            <div class="input-feild1">
+                                                <span class="fa fa-venus-mars ms-1  pe-1"></span>
+                                                <select class="form-select-md w-50  m-1 "
+                                                    aria-label="Default select example" formControlName="g">
+                                                    <option selected value="Male"> Male</option>
+                                                    <option value="Female"> Female</option>
+                                                    <option value="Other"> Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <small *ngIf="signup_form.controls['g'].dirty && signup_form.hasError('required','g')" class="text-danger">Gender is required</small>
+                                    <!-- next -->
+                                        <div class="form-group pt-3">
+                                            <div class="input-feild1">
+                                                <span class="fa fa-lock p-2"></span>
+                                                <input type="password" [type]="type_sn" formControlName="pwd"
+                                                placeholder="Password" class="text-info">
+                                                <span (click)="hidedShowPwdSignup()" class="fa {{eye_icon_sn}}"></span>
+                                            </div>
+                                        </div>
+                                        <small *ngIf="signup_form.controls['pwd'].dirty && signup_form.hasError('required','pwd')" class="text-danger">Password is required</small>
+                                    <!-- next -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4"> </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-outline-info btn-block mt-4 w-100"
+                                            (click)="postSignupData()">Signup</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <!-- Login -->
+            <div class="col-md-4">
+                <div class="box2">
+                    <div class="panel border bg-white">
+                        <div class="panel border-heading">
+                            <h3 class="pt-3 font-weight-bold text-success  text-center">LogIn</h3>
+                            <div class="panel-body ms-md-4 p-3">
+                                <form [formGroup]="login_form">
+                                    <div class="form-group pt-3">
+                                        <div class="input-feild2">
+                                            <span class="fa fa-user p-2"></span>
+                                            <input type="text" formControlName="un_ln" placeholder="User Name"
+                                                class="text-success">
+                                        </div>
+                                    </div>
+                                    <div class="form-group pt-3">
+                                        <div class="input-feild2">
+                                            <span class="fa fa-unlock p-2"></span>
+                                            <input type="password" [type]="type_ln" formControlName="pwd_ln"
+                                                placeholder="Password" class="text-success ">
+                                            <span (click)="hidedShowPwdLogin()" class="fa {{eye_icon_ln}}"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4"> </div>
+                                        <div class="col-4">
+                                            <button class="btn btn-outline-success btn-block mt-4 w-100" [disabled]="login_form.invalid" (click)="getSignupData()">Login</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-6 ">
+                <table>
+                    <thead>
+                        <th scope="col">Id</th>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">UserName</th>
+                        <th scope="col">ContactNumber</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Password</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of get_signup_data">
+                            <td>{{row.id}}</td>
+                            <td>{{row.fn}}</td>
+                            <td>{{row.un}}</td>
+                            <td>{{row.tp}}</td>
+                            <td>{{row.ln}}</td>
+                            <td>{{row.g}}</td>
+                            <td>{{row.pwd}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> -->
+    </div>
+</div>
