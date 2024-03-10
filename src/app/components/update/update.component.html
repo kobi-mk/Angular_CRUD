@@ -1,0 +1,101 @@
+<div class="outer">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Admin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/home">Update</a>
+
+
+                </ul>
+                <!-- <form class="d-flex">
+
+                    <button class="btn btn-outline-success" routerLink="/login">Signup or Login</button>
+                </form> -->
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 "></div>
+            <div class="col-md-6">
+                <div class="panel border bg-white">
+                    <div class="panel border-heading">
+
+                        <h3 class="pt-3 ms-3  font-weight-bold text-primary text-center"> Update</h3>
+                    </div>
+
+                    <div class="panel-body p-3">
+                       
+                        
+                            <div class="mx-3">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <label class="form-control text-primary ">First Name</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control text-primary" placeholder="First name"
+                                        [(ngModel)]="updateModelObject.fn">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <label class="form-control text-primary">Last Name</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control text-primary" placeholder="Last name"
+                                        [(ngModel)]="updateModelObject.ln">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <label class="form-control text-primary">User Name</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control text-primary" placeholder="User name"
+                                        [(ngModel)]="updateModelObject.un">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <label class="form-control text-primary">Gender</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control text-primary" placeholder="Gender"
+                                        [(ngModel)]="updateModelObject.g">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <label class="form-control text-primary">Contact</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="number" class="form-control text-primary" placeholder="Contact"
+                                        [(ngModel)]="updateModelObject.tp">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <label class="form-control text-primary">Password</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control text-primary" placeholder="Password"
+                                        [(ngModel)]="updateModelObject.pwd">
+                                    </div>
+                                </div>
+                                <div class="d-grid gap-2 col-5 mx-auto">
+                                    <button type="submit" class="btn btn-outline-primary ms-5 " (click)="updateSignupModel()">Update</button>
+                                </div>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

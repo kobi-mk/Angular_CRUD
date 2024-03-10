@@ -1,0 +1,60 @@
+<div class="bg_css">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Admin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/home">Dashboard</a>
+
+
+                </ul>
+                <!-- <form class="d-flex">
+
+                    <button class="btn btn-outline-success" routerLink="/login">Signup or Login</button>
+                </form> -->
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 ">
+                <table>
+                    <thead>
+                        <th scope="col">Id</th>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">UserName</th>
+                        <th scope="col">ContactNumber</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Password</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of get_signup_data">
+                            <td>{{row.id}}</td>
+                            <td>{{row.fn}}</td>
+                            <td>{{row.un}}</td>
+                            <td>{{row.tp}}</td>
+                            <td>{{row.ln}}</td>
+                            <td>{{row.g}}</td>
+                            <td>{{row.pwd}}</td>
+                            <td><button class="btn btn-danger" (click)="deleteSignupData(row.id)">Delete</button></td>
+                            <td><button class="btn btn-success" routerLink="/update/{{row.id}}">Update</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <img src="../../../assets/images/a.jpg" alt="" >
+    </div>
+</div>
+<!-- (click)="deleteSignupData(row.id)" 
+routerLink="/update/{{row.id}}"-->
+
